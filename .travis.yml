@@ -49,7 +49,17 @@
 
 
 
-install: make get-deps
-./configure && make && make test
+# install: make get-deps
+# ./configure && make && make test
+# language: c
+# script: scons
+
 language: c
-script: scons
+sudo: false # only for faster builds
+script:
+  - clang -coverage -O0 hello.c -o hello
+  - ./hello
+  - gcov hello.c
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
