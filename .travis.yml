@@ -53,9 +53,10 @@
 # ./configure && make && make test
 # language: c
 # script: scons
-
+before_install:
+  - sudo apt-get install check
 language: c
-script: make
+script: make 
 # sudo: false # only for faster builds
 # script:
 #   -  -coverage -O0 hello.c -o hello
