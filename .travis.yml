@@ -56,7 +56,7 @@
 before_install:
   - sudo apt-get install check
 language: c
-script: make 
+script: make && make test
 # sudo: false # only for faster builds
 # script:
 #   -  -coverage -O0 hello.c -o hello
