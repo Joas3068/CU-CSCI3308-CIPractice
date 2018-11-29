@@ -55,6 +55,7 @@
 # script: scons
 
 language: c
+script: make
 # sudo: false # only for faster builds
 # script:
 #   -  -coverage -O0 hello.c -o hello
